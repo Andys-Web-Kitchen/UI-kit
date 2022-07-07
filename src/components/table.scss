@@ -54,7 +54,7 @@
 			position: relative;
 
 			&:hover {
-				background-color: rgba(#{color(peach)}, 0.08);
+				background-color: rgba($peach, 0.08);
 			}
 
 			&:last-of-type {
