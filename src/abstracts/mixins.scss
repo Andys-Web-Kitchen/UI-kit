@@ -38,7 +38,7 @@
 			}
 
 			.#{$className}#{$classSuffix} {
-				@content
+				@content;
 			}
 		}
 	}

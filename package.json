@@ -7,6 +7,10 @@
     "ui-kit",
     "framework"
   ],
+  "scripts": {
+    "build": "gulp sass",
+    "watch": "gulp sass:watch"
+  },
   "main": "./src/ui-kit.scss",
   "author": "Andy's Webkitchen (https://andys-webkitchen.co.uk)",
   "homepage": "https://andys-webkitchen.co.uk",
@@ -15,5 +19,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Andys-Web-Kitchen/UI-kit"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.53.0"
   }
 }
