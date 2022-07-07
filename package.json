@@ -11,9 +11,9 @@
   "author": "Andy's Webkitchen (https://andys-webkitchen.co.uk)",
   "homepage": "https://andys-webkitchen.co.uk",
   "license": "ISC",
-  "bugs": "https://github.com/Andys-Web-Kitchen/ckeditor5-text/issues",
+  "bugs": "https://github.com/Andys-Web-Kitchen/UI-kit/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Andys-Web-Kitchen/ckeditor5-text"
+    "url": "https://github.com/Andys-Web-Kitchen/UI-kit"
   }
 }
