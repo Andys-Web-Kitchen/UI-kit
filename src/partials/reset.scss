@@ -147,7 +147,7 @@ p {
 }
 
 blockquote {
-	@include border(left, color(peach), 3px);
+	border-left: 3px solid color(peach);
 	margin: 1.5rem 0;
 	padding: 0.5rem 0.5rem 0.5rem 1.5rem;
 	color: #20254990;
