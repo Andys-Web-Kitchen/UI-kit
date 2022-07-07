@@ -1,0 +1,46 @@
+// Colors
+@each $name, $color in $colors {
+	.#{'color-'+$name} { color: $color; }
+	.#{'bg-color-'+$name} { background-color: $color; }
+}
+
+@for $i from 5 through 0 {
+	// Paddings
+	@include create-responsive-classes(p-#{$i}) { padding: #{$i}rem !important; }
+	@include create-responsive-classes(pb-#{$i}) { padding-bottom: #{$i}rem !important; }
+	@include create-responsive-classes(pt-#{$i}) { padding-top: #{$i}rem !important; }
+	@include create-responsive-classes(pl-#{$i}) { padding-left: #{$i}rem !important; }
+	@include create-responsive-classes(pr-#{$i}) { padding-right: #{$i}rem !important; }
+	@include create-responsive-classes(px-#{$i}) { padding: 0 #{$i}rem !important; }
+	@include create-responsive-classes(py-#{$i}) { padding: #{$i}rem 0 !important; }
+
+	// Margins
+	@include create-responsive-classes(mt-#{$i}) { margin-top: #{$i}rem !important; }
+	@include create-responsive-classes(ml-#{$i}) { margin-left: #{$i}rem !important; }
+	@include create-responsive-classes(mr-#{$i}) { margin-right: #{$i}rem !important; }
+	@include create-responsive-classes(mx-#{$i}) { margin: 0 #{$i}rem !important; }
+	@include create-responsive-classes(my-#{$i}) { margin: #{$i}rem 0 !important; }
+	@include create-responsive-classes(m-#{$i}) { margin: #{$i}rem !important; }
+	@include create-responsive-classes(mb-#{$i}) { margin-bottom: #{$i}rem !important; }
+
+	// Flex
+	@include create-responsive-classes(order-#{$i}) { order: #{$i} !important; }
+}
+
+// Display
+@include create-responsive-classes(d-none) { display: none !important; }
+@include create-responsive-classes(d-inline-block) { display: inline-block !important; }
+@include create-responsive-classes(d-block) { display: block !important; }
+@include create-responsive-classes(d-inline-flex) { display: inline-flex !important; }
+@include create-responsive-classes(d-flex) { display: flex !important; }
+
+// Alignments
+@include create-responsive-classes(text-left) { text-align: left !important; }
+@include create-responsive-classes(text-center) { text-align: center !important; }
+@include create-responsive-classes(text-right) { text-align: right !important; }
+
+// Positions
+@include create-responsive-classes(p-relative) { position: relative !important; }
+@include create-responsive-classes(p-sticky) { position: sticky !important; }
+@include create-responsive-classes(p-fixed) { position: fixed !important; }
+@include create-responsive-classes(p-absolute) { position: absolute !important; }

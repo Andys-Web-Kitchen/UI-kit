@@ -1,0 +1,68 @@
+@mixin max-width($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+
+	@include create-mq($value, max-width) {
+		@content
+	}
+}
+
+@mixin min-width($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+
+	@include create-mq($value) {
+		@content
+	}
+}
+
+@mixin create-mq($value, $query: min-width) {
+	@if($value == 0) {
+		@content;
+	}
+	@else {
+		@media screen and ($query: $value * 1px) {
+			@content;
+		}
+	}
+}
+
+@mixin create-responsive-classes($className) {
+	@each $modifier,$breakpoint in $breakpoints {
+		@include create-mq($breakpoint) {
+			$classSuffix: -#{$modifier};
+
+			@if str-length($modifier)==0 {
+				$classSuffix: #{$modifier};
+			}
+
+			.#{$className}#{$classSuffix} {
+				@content
+			}
+		}
+	}
+}
+
+@mixin create-col-classes($className, $cols) {
+	@each $modifier,$breakpoint in $breakpoints {
+		@include create-mq($breakpoint) {
+			@for $i from 1 through $cols {
+				$classSuffix: -#{$modifier};
+
+				@if str-length($modifier)==0 {
+					$classSuffix: #{$modifier};
+				}
+
+				$a: math.div($cols, $i);
+
+				.#{$className}-#{$i}#{$classSuffix} {
+					flex: 0 0 auto;
+					width: math.div(100, $a) * 1%;
+					position: relative;
+				}
+
+				.offset-#{$i}#{$classSuffix} {
+					margin-left: math.div(100, $a) * 1%;
+				}
+			}
+		}
+	}
+}

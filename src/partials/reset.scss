@@ -1,0 +1,188 @@
+* {
+	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+::selection {
+	background: color(peach);
+	color: color(white);
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.8;
+	min-height: 100vh;
+	color: color(blue);
+	background: color(white);
+	font-family: $font-stack-body;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		color: color(peach);
+		text-decoration: underline;
+	}
+}
+
+small {
+	font-size: 0.8rem;
+}
+
+ul {
+	margin: 1.5rem 0;
+	padding-left: 1.5rem;
+
+	li::marker {
+		color: color(peach);
+	}
+
+	@include min-width(md) {
+		padding-left: 3rem;
+	}
+}
+
+ol {
+	counter-reset: custom-count;
+	list-style: none;
+
+	li {
+		counter-increment: custom-count;
+		position: relative;
+
+		&:before {
+			content: "0" counter(custom-count) ". ";
+			color: color(peach);
+			font-size: 26px;
+			position: absolute;
+			left: -3rem;
+			top: 6px;
+			font-weight: bold;
+			line-height: 1;
+
+			@include min-width(md) {
+				top: 10px;
+			}
+		}
+	}
+}
+
+@for $i from 1 through 6 {
+
+	h#{$i},
+	.h#{$i} {
+		font-family: $font-stack-heading;
+		font-weight: bold;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+	}
+}
+
+h1,
+.h1 {
+	font-size: calc(14px + 4vw);
+	line-height: 1.4;
+
+	@include min-width(xs) {
+		font-size: calc(16px + 4vw);
+	}
+
+	@include min-width(lg) {
+		font-size: 58px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: calc(14px + 3vw);
+	color: color(peach);
+	line-height: 1.4;
+
+	@include min-width(xs) {
+		font-size: calc(16px + 3vw);
+	}
+
+	@include min-width(lg) {
+		font-size: 40px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: calc(14px + 2vw);
+
+	@include min-width(xs) {
+		font-size: calc(16px + 2vw);
+	}
+
+	@include min-width(lg) {
+		font-size: 30px;
+	}
+}
+
+h4,
+.h4 {
+	text-transform: uppercase;
+	color: color(purple);
+	letter-spacing: 1px;
+}
+
+p {
+	margin: 0 0 1.5rem;
+}
+
+blockquote {
+	@include border(left, color(peach), 3px);
+	margin: 1.5rem 0;
+	padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+	color: #20254990;
+	display: block;
+
+	p {
+		margin: 0;
+	}
+}
+
+.link {
+	position: relative;
+	margin-top: 1rem;
+	color: color(peach);
+	padding-bottom: 0.4rem;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: top;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: calc(100% - 2px);
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: currentColor;
+		pointer-events: none;
+	}
+
+	svg {
+		display: inline-block;
+		vertical-align: top;
+		width: 20px;
+		height: auto;
+		margin: 0.25rem 0 0 0.25rem;
+	}
+}

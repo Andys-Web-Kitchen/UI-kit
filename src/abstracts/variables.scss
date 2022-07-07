@@ -1,0 +1,40 @@
+// Colors
+$colors: (
+	peach: #f46661,
+	peach-light: #f5ad7f,
+	blue: #202549,
+	blue-light: #282d55,
+	blue-dark: #161a36,
+	off-blue: #9DA1B9,
+	purple: #6B6D84,
+	white: #ffffff,
+	off-white: #a7a8b3,
+	black: #000000,
+	gray: gray,
+	gray-light: #f5f5f5,
+	green: #3cbb4c,
+	green-dark: #17421c
+) !default;
+
+
+// Borders
+$border-width: 1px !default;
+$border-color: #d9d9d9 !default;
+$border-radius: 3px !default;
+
+// Fonts
+$font-stack-heading: 'Urbane Bold', 'Lato', sans-serif;
+$font-stack-body: 'Acumin Pro', 'Arial', sans-serif;
+
+// Grid
+$cols: 12 !default;
+$gap: 30px !default;
+$breakpoints: (
+	'': 0,
+	'xs': 414,
+	'sm': 576,
+	'md': 768,
+	'lg': 992,
+	'xl': 1200,
+	'xxl': 1600,
+) !default;

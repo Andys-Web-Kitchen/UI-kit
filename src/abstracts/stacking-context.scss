@@ -1,0 +1,39 @@
+$stacking-context-background: -1;
+$stacking-context-null: 0;
+$stacking-context-default: 1;
+$stacking-context-panel: 100;
+$stacking-context-expandable: 200;
+$stacking-context-header: 300;
+$stacking-context-sticky: 500;
+$stacking-context-modal-parent: 1000;
+$stacking-context-modal: 2000;
+$stacking-context-popup: 5000;
+
+
+$stacking-contexts: (
+    background: ("base": $stacking-context-background ),
+    null: ("base": $stacking-context-null ),
+    default: ("base": $stacking-context-default ),
+    panel: ("base": $stacking-context-panel ),
+    expandable: ("base": $stacking-context-expandable, "behind": $stacking-context-expandable - 10, "infront": $stacking-context-expandable + 10),
+    header: ("base": $stacking-context-header, "behind": $stacking-context-header - 10, "infront": $stacking-context-header + 10),
+    sticky: ("base": $stacking-context-sticky, "behind": $stacking-context-modal - 10, "infront": $stacking-context-modal + 10),
+    modal-parent: ("base": $stacking-context-modal-parent ),
+    modal: ("base": $stacking-context-modal, "behind": $stacking-context-modal - 10, "infront": $stacking-context-modal + 10),
+    popup: ("base": $stacking-context-popup )
+);
+
+
+@mixin stacking-context($context, $layer: "base", $withRelative: true) {
+    @if map-has-key($stacking-contexts, $context) {
+        $stacking-context: map-get($stacking-contexts, $context);
+        @if map-has-key($stacking-context, $layer) {
+            z-index: map-get($stacking-context, $layer);
+            isolation: isolate;
+            @if $withRelative {
+                position: relative;
+            }
+        }
+    }
+    @content;
+}

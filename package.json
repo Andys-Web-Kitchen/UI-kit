@@ -1,0 +1,8 @@
+{
+  "name": "@andys-webkitchen/ui-kit",
+  "version": "1.0.0",
+  "description": "Web Kitchen branded UI kit",
+  "main": "src/ui-kit.scss",
+  "author": "Andy's WebKitchen",
+  "license": "ISC"
+}
