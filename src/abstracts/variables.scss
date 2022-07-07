@@ -28,6 +28,7 @@ $font-stack-body: 'Acumin Pro', 'Arial', sans-serif;
 
 // Grid
 $cols: 12 !default;
+$cols-class: 'col' !default;
 $gap: 30px !default;
 $breakpoints: (
 	'': 0,
