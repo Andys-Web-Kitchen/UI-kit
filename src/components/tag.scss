@@ -1,0 +1,16 @@
+.tag {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 0.75rem;
+	padding: 0 0.5rem;
+	line-height: 25px;
+	border-radius: $border-radius;
+	font-weight: bold;
+	background: color(peach);
+	color: color(white);
+	margin-right: 0.5rem;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}

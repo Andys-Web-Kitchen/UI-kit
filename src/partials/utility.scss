@@ -34,6 +34,10 @@
 @include create-responsive-classes(d-inline-flex) { display: inline-flex !important; }
 @include create-responsive-classes(d-flex) { display: flex !important; }
 
+// Flex
+@include create-responsive-classes(justify-content-between) { justify-content: space-between !important; }
+@include create-responsive-classes(align-items-center) { align-items: center !important; }
+
 // Alignments
 @include create-responsive-classes(text-left) { text-align: left !important; }
 @include create-responsive-classes(text-center) { text-align: center !important; }

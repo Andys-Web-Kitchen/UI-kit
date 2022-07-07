@@ -1,0 +1,20 @@
+.card {
+	@include stacking-context('default');
+	background: color(white);
+	border-radius: $border-radius * 4;
+	border: $border-width solid $border-color;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	user-select: none;
+	display: inline-block;
+	vertical-align: top;
+	color: color(blue);
+	margin-bottom: 2rem;
+	box-shadow: $box-shadow-medium;
+
+	&__body {
+		position: relative;
+		padding: 2rem;
+	}
+}
